@@ -295,8 +295,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fd3369b31d24f47bd092c7f7013266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalMovementSpeed: 0.25
-  horizontalMovementSpeed: 0.25
+  verticalMovementSpeed: 0.35
+  horizontalMovementSpeed: 0.35
+  turnRotation: 50
+  rocketLeft: {fileID: 939360909}
+  rocketRight: {fileID: 1769768792}
 --- !u!114 &442727548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,7 +705,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5677,7 +5680,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
