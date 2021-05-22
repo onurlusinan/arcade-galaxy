@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using DG.Tweening;
-
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Attributes")]
@@ -15,17 +13,23 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem rocketLeft;
     public ParticleSystem rocketRight;
 
-
     private void Awake()
     {
         turnRotation = Mathf.Clamp(turnRotation, 0, turnRotation);
     }
+
+    /// <summary>
+    /// Play the rocket particle effects
+    /// </summary>
     private void PlayRockets()
     { 
         rocketLeft.Play();
         rocketRight.Play();
     }
 
+    /// <summary>
+    /// Stop the rocket particle effects
+    /// </summary>
     private void StopRockets()
     {
         rocketRight.Stop();
@@ -34,15 +38,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        // Basic Movement
         if (Input.GetKey(KeyCode.A))
-        { 
             transform.Translate(Vector3.left * horizontalMovementSpeed, Space.World);
-            
-        }
         if (Input.GetKey(KeyCode.D))
-        { 
             transform.Translate(Vector3.right * horizontalMovementSpeed, Space.World);
-        }
         if (Input.GetKey(KeyCode.W))
             transform.Translate(Vector3.up * verticalMovementSpeed, Space.World);
         if (Input.GetKey(KeyCode.S))
