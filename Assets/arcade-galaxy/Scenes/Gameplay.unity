@@ -513,7 +513,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549041381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -534,8 +534,8 @@ MonoBehaviour:
   enemy: {fileID: 5217157492692901795, guid: 747f346227629b64ba58957251488a08, type: 3}
   enemySpawnLocation: {fileID: 1758530987}
   initPoolAmount: 5
-  enemyAmount: 4
-  enemySpawnTime: 2
+  enemyAmount: 10
+  enemySpawnTime: 1
   enemyList: []
 --- !u!114 &549041384
 MonoBehaviour:

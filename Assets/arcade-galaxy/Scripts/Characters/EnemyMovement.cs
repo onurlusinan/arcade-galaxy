@@ -11,21 +11,19 @@ namespace ArcadeGalaxy.Characters
         public float distanceLimit;
 
         private Transform target;
-        private BoxCollider2D coll;
 
         private void Start()
         {
             target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            coll = this.GetComponent<BoxCollider2D>();
         }
 
-        void OnTriggerEnter2D(Collider2D coll)
+        void OnTriggerEnter2D(Collider2D collider)
         {
-            if (coll.gameObject.tag == "Enemy")
+            if (collider.gameObject.tag == "Enemy")
             {
                 Debug.Log("Enemy collides with Enemy!");
             }
-            else if (coll.gameObject.tag == "Player")
+            else if (collider.gameObject.tag == "Player")
             {
                 Debug.Log("Enemy collides with Player!");
             }
@@ -33,6 +31,9 @@ namespace ArcadeGalaxy.Characters
 
         private void Update()
         {
+            // Keep the rotation 
+            transform.rotation = Quaternion.identity;
+
             if (Vector2.Distance(transform.position, target.position) > distanceLimit)
             {
                 transform.position = Vector2.MoveTowards(transform.position, target.position, followSpeed * Time.deltaTime);

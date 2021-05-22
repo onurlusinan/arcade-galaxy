@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using ArcadeGalaxy.Utils;
+using ArcadeGalaxy.Utilities;
 using ArcadeGalaxy.Characters;
 
 namespace ArcadeGalaxy.Managers
@@ -48,6 +48,28 @@ namespace ArcadeGalaxy.Managers
                 // SetSprites(type, enemyPool[i]); // At some point for enemy types
 
                 enemyList[i].transform.SetParent(enemySpawnLocation);
+
+                int index = Random.Range(1,4);
+                switch (index)
+                {
+                    case 1:
+                        enemyList[i].transform.position += new Vector3(-22.5f, 40, 0);
+                        enemyList[i].transform.position += new Vector3(Random.Range(-50, 0), Random.Range(0, 50), 0);
+                        break;
+                    case 2:
+                        enemyList[i].transform.position += new Vector3(22.5f, 40, 0);
+                        enemyList[i].transform.position += new Vector3(Random.Range(0, 50), Random.Range(0, 50), 0);
+                        break;
+                    case 3:
+                        enemyList[i].transform.position += new Vector3(-22.5f, -40, 0);
+                        enemyList[i].transform.position += new Vector3(Random.Range(-50, 0), Random.Range(-50, 0), 0);
+                        break;
+                    case 4:
+                        enemyList[i].transform.position += new Vector3(22.5f, -40, 0);
+                        enemyList[i].transform.position += new Vector3(Random.Range(0, 50), Random.Range(-50, 0), 0);
+                        break;
+                }
+
                 enemyList[i].SetActive(true);
                 
                 yield return enemyDelay;

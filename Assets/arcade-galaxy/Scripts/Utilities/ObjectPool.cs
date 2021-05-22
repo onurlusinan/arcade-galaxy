@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ArcadeGalaxy.Utils
+namespace ArcadeGalaxy.Utilities
 {
     public class ObjectPool : MonoBehaviour
     {

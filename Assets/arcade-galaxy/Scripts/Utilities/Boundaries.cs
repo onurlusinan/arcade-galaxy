@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ArcadeGalaxy.Utils
+namespace ArcadeGalaxy.Utilitiess
 {
     public class Boundaries : MonoBehaviour
     {
