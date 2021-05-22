@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+using ArcadeGalaxy.Utils;
+
+namespace ArcadeGalaxy.Managers
 {
-    
+    public class EnemyManager : MonoBehaviour
+    {
+        private ObjectPool pool;
+    }
 }

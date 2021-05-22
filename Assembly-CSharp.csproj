@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{CBEC47D2-5FAC-386B-9574-DC5E9AB0C228}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -56,10 +57,11 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\arcade-galaxy\Scripts\Player\Character.cs" />
-    <Compile Include="Assets\arcade-galaxy\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\arcade-galaxy\Scripts\Characters\Character.cs" />
+    <Compile Include="Assets\arcade-galaxy\Scripts\Characters\PlayerMovement.cs" />
     <Compile Include="Assets\arcade-galaxy\Scripts\Utilities\Boundaries.cs" />
     <Compile Include="Assets\arcade-galaxy\Scripts\Managers\EnemyManager.cs" />
+    <Compile Include="Assets\arcade-galaxy\Scripts\Utilities\ObjectPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
