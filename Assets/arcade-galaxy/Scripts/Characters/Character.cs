@@ -26,5 +26,15 @@ namespace ArcadeGalaxy.Characters
         {
             return damage;
         }
+
+        internal void DecreaseHealth(float amount)
+        {
+            this.health -= amount; 
+        }
+
+        internal void DecreaseShield(float amount)
+        {
+            this.shield -= amount;
+        }
     }
 }

@@ -65,6 +65,10 @@ namespace ArcadeGalaxy.Characters
                 transform.rotation = Quaternion.Euler(0, -turnRotation, 0);
             if (Input.GetKeyUp(KeyCode.D))
                 transform.rotation = Quaternion.identity;
+            if (Input.GetKeyDown(KeyCode.S))
+                transform.rotation = Quaternion.Euler(turnRotation, 0, 0);
+            if (Input.GetKeyUp(KeyCode.S))
+                transform.rotation = Quaternion.identity;
         }
     }
 }
