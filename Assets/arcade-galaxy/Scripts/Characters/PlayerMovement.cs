@@ -9,16 +9,10 @@ namespace ArcadeGalaxy.Characters
         [Header("Attributes")]
         public float verticalMovementSpeed = 1f;
         public float horizontalMovementSpeed = 1f;
-        public float turnRotation;
 
         [Header("Rockets")]
         public ParticleSystem rocketLeft;
         public ParticleSystem rocketRight;
-
-        private void Awake()
-        {
-            turnRotation = Mathf.Clamp(turnRotation, 0, turnRotation);
-        }
 
         /// <summary>
         /// Play the rocket particle effects
@@ -38,8 +32,24 @@ namespace ArcadeGalaxy.Characters
             rocketLeft.Stop();
         }
 
+        private void FaceMouse()
+        {
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+            Vector2 direction = new Vector2(
+                mousePosition.x - transform.position.x,
+                mousePosition.y - transform.position.y
+            );
+
+            transform.up = direction;
+        }
+
         private void Update()
         {
+            // Follow the mouse
+            FaceMouse();
+
             // Basic Movement
             if (Input.GetKey(KeyCode.A))
                 transform.Translate(Vector3.left * horizontalMovementSpeed, Space.World);
@@ -55,20 +65,6 @@ namespace ArcadeGalaxy.Characters
                 PlayRockets();
             if (Input.GetKeyUp(KeyCode.W))
                 StopRockets();
-
-            // Turn Rotations
-            if (Input.GetKeyDown(KeyCode.A))
-                transform.rotation = Quaternion.Euler(0, turnRotation, 0);
-            if (Input.GetKeyUp(KeyCode.A))
-                transform.rotation = Quaternion.identity;
-            if (Input.GetKeyDown(KeyCode.D))
-                transform.rotation = Quaternion.Euler(0, -turnRotation, 0);
-            if (Input.GetKeyUp(KeyCode.D))
-                transform.rotation = Quaternion.identity;
-            if (Input.GetKeyDown(KeyCode.S))
-                transform.rotation = Quaternion.Euler(turnRotation, 0, 0);
-            if (Input.GetKeyUp(KeyCode.S))
-                transform.rotation = Quaternion.identity;
         }
     }
 }

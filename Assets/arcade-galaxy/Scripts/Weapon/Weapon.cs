@@ -7,12 +7,12 @@ namespace ArcadeGalaxy.Weapon
     public class Weapon : MonoBehaviour
     {
         public Transform firePoint;
-        public Transform bulletManager;
+        public Transform bullets;
         public GameObject bullet;
 
         private void Shoot()
         {
-            Instantiate(bullet, firePoint.position, firePoint.rotation, bulletManager);
+            Instantiate(bullet, firePoint.position, firePoint.rotation, bullets);
         }
 
         void Update()
