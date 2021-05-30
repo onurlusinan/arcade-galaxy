@@ -64,6 +64,7 @@
     <Compile Include="Assets\arcade-galaxy\Scripts\Characters\EnemyMovement.cs" />
     <Compile Include="Assets\arcade-galaxy\Scripts\Weapon\Weapon.cs" />
     <Compile Include="Assets\arcade-galaxy\Scripts\Weapon\Bullet.cs" />
+    <Compile Include="Assets\arcade-galaxy\Scripts\Managers\BulletManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
