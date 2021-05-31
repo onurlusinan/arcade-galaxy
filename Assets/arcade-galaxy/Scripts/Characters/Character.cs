@@ -6,7 +6,7 @@ namespace ArcadeGalaxy.Characters
 {
     public class Character : MonoBehaviour
     {
-        private float health;
+        private float health = 100f;
         private float shield;
         private float damage;
 

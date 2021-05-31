@@ -14,6 +14,9 @@ namespace ArcadeGalaxy.Weapon
 
         public float fireSpeed;
 
+        /// <summary>
+        /// Main shoot method, finds eligible bullet from list and shoots it
+        /// </summary>
         private void Shoot()
         {
             GameObject bullet = new GameObject();

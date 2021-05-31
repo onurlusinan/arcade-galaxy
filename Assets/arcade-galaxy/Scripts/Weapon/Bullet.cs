@@ -12,11 +12,22 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ReturnToPool();
+        // Return bullet to pool
+        ReturnToPool(); 
 
+        // Do damage to character(enemy) that is collided with
         Character enemy = collision.GetComponent<Character>();
         if (enemy != null)
+        { 
             enemy.DecreaseHealth(damage);
+            Debug.Log("Bullet hit enemy. Health: " + enemy.GetHealth() + " / Damage done: " + damage);
+            
+            if (enemy.GetHealth() <= 0)
+            {
+                enemy.gameObject.SetActive(false);
+                enemy.transform.position = EnemyManager.Instance.enemySpawnLocation.transform.position;
+            }
+        }  
     }
 
     /// <summary>
