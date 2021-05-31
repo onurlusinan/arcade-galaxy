@@ -9,10 +9,12 @@ namespace ArcadeGalaxy.Managers
 {
     public class EnemyManager : MonoBehaviour
     {
+        // Static instance variable for singleton behaviour
+        public static EnemyManager Instance;
+
         [Header("Enemy Pool Config")]
         public GameObject enemy;
         public Transform enemySpawnLocation;
-        public int initPoolAmount;
         public int enemyAmount;
         public float enemySpawnTime;
 
@@ -22,8 +24,15 @@ namespace ArcadeGalaxy.Managers
 
         private void Awake()
         {
+            if (EnemyManager.Instance == null)
+            {
+                EnemyManager.Instance = this;
+            }
+            else
+                Destroy(this.gameObject);
+
             enemyPool = this.GetComponent<ObjectPool>();
-            enemyPool.InitPool(enemy, initPoolAmount);
+            enemyPool.InitPool(enemy, enemyAmount);
 
             enemyDelay = new WaitForSeconds(enemySpawnTime);
         }
@@ -45,8 +54,6 @@ namespace ArcadeGalaxy.Managers
         {
             for (int i = 0; i < enemyList.Count; i++)
             {
-                // SetSprites(type, enemyPool[i]); // At some point for enemy types
-
                 enemyList[i].transform.SetParent(enemySpawnLocation);
 
                 int index = Random.Range(1,4);

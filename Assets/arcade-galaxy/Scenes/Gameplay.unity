@@ -151,7 +151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &169660169
 GameObject:
@@ -419,7 +419,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalMovementSpeed: 0.15
   horizontalMovementSpeed: 0.15
-  turnRotation: 50
   rocketLeft: {fileID: 939360909}
   rocketRight: {fileID: 1769768792}
 --- !u!114 &442727548
@@ -508,6 +507,7 @@ MonoBehaviour:
   firePoint: {fileID: 2109218600}
   bullets: {fileID: 151562938}
   bullet: {fileID: 6740396190965422251, guid: d609c2ae5fb89f649b0948885230a47f, type: 3}
+  fireSpeed: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +621,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &549041383
 MonoBehaviour:
@@ -636,8 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5217157492692901795, guid: 747f346227629b64ba58957251488a08, type: 3}
-  enemySpawnLocation: {fileID: 1758530987}
-  initPoolAmount: 5
+  enemySpawnLocation: {fileID: 1758530986}
   enemyAmount: 10
   enemySpawnTime: 1
   enemyList: []
@@ -822,7 +821,7 @@ RectTransform:
   m_Children:
   - {fileID: 1557209823}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5745,6 +5744,66 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 48.436577, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1294383517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1294383520}
+  - component: {fileID: 1294383519}
+  - component: {fileID: 1294383518}
+  m_Layer: 0
+  m_Name: BulletManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1294383518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294383517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f2f5fad365755448f87a4a8ce84aca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6740396190965422251, guid: d609c2ae5fb89f649b0948885230a47f, type: 3}
+  bulletParentObject: {fileID: 1683585264}
+  bulletAmount: 20
+  bulletList: []
+--- !u!114 &1294383519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294383517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec791f8b286c86b429c09c9f484d054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1294383520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294383517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1299947338
 GameObject:
   m_ObjectHideFlags: 0
@@ -5830,7 +5889,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1452673428
 GameObject:
@@ -5896,7 +5955,7 @@ Transform:
   - {fileID: 1299947339}
   - {fileID: 1678308155}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1550638855
 GameObject:
@@ -5926,7 +5985,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557209822
 GameObject:
@@ -6022,6 +6081,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4846916, y: 91.900566}
   m_EdgeRadius: 0
+--- !u!1 &1683585263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1683585264}
+  m_Layer: 0
+  m_Name: Bullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1683585264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683585263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.056362, y: 27.590286, z: -731.74286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1756337780
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,7 +6185,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1758530987}
+  - component: {fileID: 1758530986}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -6104,25 +6193,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!224 &1758530987
-RectTransform:
+--- !u!4 &1758530986
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758530985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalPosition: {x: 0, y: 50, z: 90}
   m_LocalScale: {x: 0.074142724, y: 0.074142724, z: 0.074142724}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 607, y: 1079}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1769768789
 GameObject:
   m_ObjectHideFlags: 0
