@@ -61,10 +61,11 @@
     <Compile Include="Assets\arcade-galaxy\Scripts\Weapon\Bullet.cs" />
     <Compile Include="Assets\arcade-galaxy\Scripts\Managers\EnemyManager.cs" />
     <Compile Include="Assets\arcade-galaxy\Scripts\Utilities\ObjectPool.cs" />
+    <Compile Include="Assets\arcade-galaxy\Scripts\Managers\BulletManager.cs" />
     <Compile Include="Assets\arcade-galaxy\Scripts\Utilities\Boundaries.cs" />
     <Compile Include="Assets\arcade-galaxy\Scripts\Weapon\Weapon.cs" />
     <Compile Include="Assets\arcade-galaxy\Scripts\Characters\EnemyMovement.cs" />
-    <Compile Include="Assets\arcade-galaxy\Scripts\Managers\BulletManager.cs" />
+    <Compile Include="Assets\arcade-galaxy\Scripts\Characters\Enemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

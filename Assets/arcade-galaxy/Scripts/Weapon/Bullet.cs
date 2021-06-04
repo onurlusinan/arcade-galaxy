@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
         ReturnToPool(); 
 
         // Do damage to character(enemy) that is collided with
-        Character enemy = collision.GetComponent<Character>();
+        Enemy enemy = collision.GetComponent<Enemy>();
         if (enemy != null)
         { 
             enemy.DecreaseHealth(damage);
@@ -24,8 +24,8 @@ public class Bullet : MonoBehaviour
             
             if (enemy.GetHealth() <= 0)
             {
-                enemy.gameObject.SetActive(false);
-                enemy.transform.position = EnemyManager.Instance.enemySpawnLocation.transform.position;
+                enemy.ReturnToPool();
+                //enemy.PlayDeathAnim();
             }
         }  
     }

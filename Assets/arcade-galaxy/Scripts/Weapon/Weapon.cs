@@ -10,7 +10,6 @@ namespace ArcadeGalaxy.Weapon
     {
         public Transform firePoint;
         public Transform bullets;
-        public GameObject bullet;
 
         public float fireSpeed;
 
@@ -19,21 +18,25 @@ namespace ArcadeGalaxy.Weapon
         /// </summary>
         private void Shoot()
         {
-            GameObject bullet = new GameObject();
-
-            for (int i = 0; i < BulletManager.Instance.bulletList.Count; i++)
-            {
-                if (BulletManager.Instance.bulletList[i].activeInHierarchy == false)
-                {
-                    bullet = BulletManager.Instance.bulletList[i];
-                    break; 
-                }
-            }
+            GameObject bullet = FindBullet();
 
             bullet.transform.position = firePoint.transform.position;
             bullet.transform.rotation = firePoint.transform.rotation;
             bullet.SetActive(true);
             bullet.GetComponent<Rigidbody2D>().velocity = transform.up * fireSpeed;
+        }
+
+        private GameObject FindBullet()
+        {
+            for (int i = 0; i < BulletManager.Instance.bulletList.Count; i++)
+            {
+                if (BulletManager.Instance.bulletList[i].activeInHierarchy == false)
+                {
+                    return BulletManager.Instance.bulletList[i];
+                }
+            }
+            Debug.LogError("Couldn't find available bullet object");
+            return null;
         }
 
         void Update()
